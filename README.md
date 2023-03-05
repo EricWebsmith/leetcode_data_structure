@@ -27,8 +27,11 @@ Here we use this package to solve `Leetcode 100 same tree`:
 
 ```python
 import unittest
+
 from data_structure import TreeNode
 
+
+# region Solution class to submit to leetcode.com
 
 class Solution:
     def isSameTree(self, p: TreeNode | None, q: TreeNode | None) -> bool:
@@ -41,8 +44,14 @@ class Solution:
 
         return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 
+# endregion
+
 
 def test(testObj: unittest.TestCase, p_arr: list[int], q_arr: list[int], expected: bool) -> None:
+    """
+    A test function which takes the arrays. (Because leetcode only gives you arrays.)
+    We can reuse this function in the test class methods.
+    """
     p = TreeNode.from_array(p_arr)
     q = TreeNode.from_array(q_arr)
     so = Solution()
@@ -52,6 +61,10 @@ def test(testObj: unittest.TestCase, p_arr: list[int], q_arr: list[int], expecte
 
 class TestClass(unittest.TestCase):
     def test_1(self):
+        """
+        In a test case, you only provide input and output,
+        you can copy them from leetcode website, or use a scrapper.
+        """
         test(self, [1, 2, 3], [1, 2, 3], True)
 
     def test_2(self):
@@ -64,3 +77,9 @@ class TestClass(unittest.TestCase):
 if __name__ == "__main__":
     unittest.main()
 ```
+
+
+# Other leetcode related projects
+
+[Leetcode Step by Step -- Visualization]
+https://ericwebsmith.github.io/leetcode_web/
