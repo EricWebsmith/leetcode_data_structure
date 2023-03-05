@@ -1,0 +1,9 @@
+[flake8]
+count = True
+exclude = .git, .direnv, .venv, __pycache__, .pytest_cache, __init__.py
+max-line-length = 120
+
+
+per-file-ignores =
+    __init__.py: F40
+    tests/*.py: D10

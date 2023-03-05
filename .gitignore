@@ -1,0 +1,12 @@
+# build
+*.egg-info
+build/
+dist/
+
+# IDE
+.vscode/
+.venv/
+
+# cache
+.pytest_cache/
+__pycache__
